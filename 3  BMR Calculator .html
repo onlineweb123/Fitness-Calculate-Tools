@@ -5,57 +5,94 @@
   <title>BMR Calculator</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
       font-family: 'Noto Sans Tamil', sans-serif;
-      background: #fff;
-      color: #222;
-      padding: 30px;
-      max-width: 500px;
-      margin: auto;
+      background-color: #fff;
+    }
+
+    .container {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .bmr-box {
+      width: 100%;
+      max-width: 400px;
+      background: #ffffff;
       border-radius: 10px;
       box-shadow: 0 0 20px #ddd;
+      padding: 25px;
     }
+
     h1 {
       color: #0056b3;
       text-align: center;
+      margin-bottom: 20px;
+      font-size: 22px;
     }
+
+    label {
+      font-size: 16px;
+      display: block;
+      margin: 8px 0 5px;
+    }
+
     input, select, button {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
+      margin-bottom: 12px;
       border-radius: 8px;
       border: 1px solid #ccc;
       font-size: 16px;
     }
+
     button {
       background-color: #28a745;
       color: white;
+      font-weight: bold;
       border: none;
+      cursor: pointer;
     }
+
     .result {
       background: #e6f7ff;
       padding: 15px;
       border-radius: 8px;
       margin-top: 15px;
       text-align: center;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>🔹 BMR கணக்கீடு</h1>
-  <label>பாலினம்:</label>
-  <select id="gender">
-    <option value="male">ஆண்</option>
-    <option value="female">பெண்</option>
-  </select>
-  <label>எடை (கிலோ):</label>
-  <input type="number" id="weight" />
-  <label>உயரம் (செ.மீ):</label>
-  <input type="number" id="height" />
-  <label>வயது (ஆண்டு):</label>
-  <input type="number" id="age" />
-  <button onclick="calculateBMR()">BMR கணக்கிடு</button>
-  <div class="result" id="result"></div>
+  <div class="container">
+    <div class="bmr-box">
+      <h1>🔹 BMR கணக்கீடு</h1>
+      <label>பாலினம்:</label>
+      <select id="gender">
+        <option value="male">ஆண்</option>
+        <option value="female">பெண்</option>
+      </select>
+      <label>எடை (கிலோ):</label>
+      <input type="number" id="weight" />
+      <label>உயரம் (செ.மீ):</label>
+      <input type="number" id="height" />
+      <label>வயது (ஆண்டு):</label>
+      <input type="number" id="age" />
+      <button onclick="calculateBMR()">BMR கணக்கிடு</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
 
   <script>
     function calculateBMR() {
@@ -63,6 +100,11 @@
       const weight = parseFloat(document.getElementById('weight').value);
       const height = parseFloat(document.getElementById('height').value);
       const age = parseFloat(document.getElementById('age').value);
+
+      if (!weight || !height || !age) {
+        document.getElementById('result').innerHTML = "தயவு செய்து அனைத்து தகவல்களையும் நிரப்பவும்.";
+        return;
+      }
 
       let bmr = 0;
       if (gender === "male") {

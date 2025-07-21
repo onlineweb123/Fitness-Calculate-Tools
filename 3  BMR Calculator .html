@@ -3,74 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <title>BMR Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
       padding: 0;
       font-family: 'Noto Sans Tamil', sans-serif;
-      background-color: #fff;
+      background-color: #f7f7f7;
+      color: #333;
     }
 
     .container {
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 480px;
+      margin: auto;
       padding: 20px;
     }
 
     .bmr-box {
-      width: 100%;
-      max-width: 400px;
-      background: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 20px #ddd;
-      padding: 25px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      padding: 25px 20px;
     }
 
     h1 {
-      color: #0056b3;
+      color: #0077cc;
       text-align: center;
-      margin-bottom: 20px;
       font-size: 22px;
+      margin-bottom: 20px;
     }
 
     label {
       font-size: 16px;
+      margin-bottom: 5px;
       display: block;
-      margin: 8px 0 5px;
     }
 
-    input, select, button {
+    input, select {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
-      border-radius: 8px;
+      padding: 12px;
       border: 1px solid #ccc;
+      border-radius: 10px;
       font-size: 16px;
+      margin-bottom: 15px;
+      background: #fefefe;
     }
 
     button {
+      width: 100%;
+      padding: 14px;
       background-color: #28a745;
       color: white;
+      font-size: 18px;
       font-weight: bold;
       border: none;
+      border-radius: 12px;
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #218838;
     }
 
     .result {
-      background: #e6f7ff;
+      margin-top: 20px;
+      background-color: #e9f8ff;
+      border-left: 5px solid #0077cc;
       padding: 15px;
-      border-radius: 8px;
-      margin-top: 15px;
+      border-radius: 10px;
+      font-size: 18px;
       text-align: center;
-      font-weight: bold;
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+      input, select, button {
+        font-size: 16px;
+      }
+      .result {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
@@ -78,18 +98,24 @@
   <div class="container">
     <div class="bmr-box">
       <h1>🔹 BMR கணக்கீடு</h1>
+
       <label>பாலினம்:</label>
       <select id="gender">
         <option value="male">ஆண்</option>
         <option value="female">பெண்</option>
       </select>
+
       <label>எடை (கிலோ):</label>
-      <input type="number" id="weight" />
+      <input type="number" id="weight" placeholder="எ.கா. 70" />
+
       <label>உயரம் (செ.மீ):</label>
-      <input type="number" id="height" />
+      <input type="number" id="height" placeholder="எ.கா. 170" />
+
       <label>வயது (ஆண்டு):</label>
-      <input type="number" id="age" />
+      <input type="number" id="age" placeholder="எ.கா. 25" />
+
       <button onclick="calculateBMR()">BMR கணக்கிடு</button>
+
       <div class="result" id="result"></div>
     </div>
   </div>
@@ -100,9 +126,11 @@
       const weight = parseFloat(document.getElementById('weight').value);
       const height = parseFloat(document.getElementById('height').value);
       const age = parseFloat(document.getElementById('age').value);
+      const resultBox = document.getElementById('result');
 
       if (!weight || !height || !age) {
-        document.getElementById('result').innerHTML = "தயவு செய்து அனைத்து தகவல்களையும் நிரப்பவும்.";
+        resultBox.innerHTML = "⚠️ தயவுசெய்து அனைத்து விவரங்களையும் சரியாக நிரப்பவும்.";
+        resultBox.style.color = "#cc0000";
         return;
       }
 
@@ -113,7 +141,8 @@
         bmr = 10 * weight + 6.25 * height - 5 * age - 161;
       }
 
-      document.getElementById('result').innerHTML = `<b>உங்கள் BMR:</b> ${bmr.toFixed(2)} கலோரி/நாள்`;
+      resultBox.innerHTML = `🔥 <strong>உங்கள் BMR:</strong> ${bmr.toFixed(2)} கலோரி/நாள்`;
+      resultBox.style.color = "#0077cc";
     }
   </script>
 </body>

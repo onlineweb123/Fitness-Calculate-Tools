@@ -69,6 +69,100 @@
   </style>
 </head>
 <body>
+
+
+
+
+       <!-- Search Box ஆரம்பம்  -->
+       
+       <!-- 🌿 Stylish Search Box -->
+<style>
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 30px auto;
+    border: 2px solid #28a745;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+    background: #fff;
+  }
+
+  .search-container input {
+    flex: 1;
+    padding: 14px 18px;
+    border: none;
+    font-size: 17px;
+    outline: none;
+    background: transparent;
+    color: #333;
+  }
+
+  .search-container button {
+    background-color: #28a745;
+    color: white;
+    padding: 14px 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .search-container button:hover {
+    background-color: #218838;
+  }
+
+  .search-container button i {
+    font-style: normal;
+  }
+
+  @media (max-width: 600px) {
+    .search-container {
+      max-width: 95%;
+    }
+
+    .search-container input {
+      font-size: 16px;
+    }
+
+    .search-container button {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<!-- 🔍 Search Box + Icon -->
+<div class="search-container">
+  <input type="text" id="searchInput" placeholder="🔍 தேடுங்கள்...">
+  <button><i>🔍</i></button>
+</div>
+
+<!-- 🔁 Functional Script -->
+<script>
+  document.getElementById('searchInput').addEventListener('input', function () {
+    const searchValue = this.value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      const fullText = card.textContent.toLowerCase();
+      if (fullText.includes(searchValue)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+       
+       <!-- Search Box முடிவு     -->
+
+
+
   <div class="container">
     <div class="card">
         

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>உங்களுக்கு விளம்பரம் செய்ய</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #f0f4ff, #f9fafb);
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .plan {
+      background: linear-gradient(135deg, #ffffff, #f8f9ff);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      padding: 25px;
+      margin-bottom: 25px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .plan:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    .plan h2 {
+      margin: 0 0 10px;
+      color: #007bff;
+      font-size: 22px;
+    }
+    .plan p {
+      margin: 0;
+      color: #555;
+      font-size: 16px;
+    }
+    .form-box {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-top: 30px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .form-box h3 {
+      margin-top: 0;
+      color: #007bff;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+    input, select {
+      width: 95%;
+      padding: 14px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    input:focus, select:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0,123,255,0.3);
+      outline: none;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #28a745, #218838);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #666;
+      margin-top: 30px;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>உங்களுக்கு விளம்பரம் செய்ய</h1>
+    <p>உங்கள் வியாபாரத்திற்கு சிறந்த Plans ✨</p>
+  </header>
+
+  <div class="container">
+    <div class="plan">
+      <h2>₹99 / 17 நாட்கள்</h2>
+      <p>இரண்டு வாரம் + 3 நாள் (மொத்தம் 17 நாட்கள்) விளம்பரம்</p>
+    </div>
+    <div class="plan">
+      <h2>₹199 / 30 நாட்கள்</h2>
+      <p>முழு 1 மாதம் உங்கள் வியாபாரம் பிரகாசிக்கட்டும் 🚀</p>
+    </div>
+    <div class="plan">
+      <h2>₹399 / 60 நாட்கள்</h2>
+      <p>2 மாதங்களுக்கு சலுகை விலை 🔥</p>
+    </div>
+
+    <div class="form-box">
+      <h3>உங்கள் விவரங்களை நிரப்பவும்</h3>
+      <form id="adForm">
+        <input type="text" id="name" placeholder="உங்கள் பெயர்" required>
+        <input type="text" id="business" placeholder="வியாபார பெயர் (இருந்தால்)">
+        <input type="tel" id="phone" placeholder="உங்கள் Phone Number" required>
+        <select id="plan" required>
+          <option value="">-- Plan தேர்வு செய்யவும் --</option>
+          <option value="₹99 / 17 நாட்கள்">₹99 / 17 நாட்கள்</option>
+          <option value="₹199 / 30 நாட்கள்">₹199 / 30 நாட்கள்</option>
+          <option value="₹399 / 60 நாட்கள்">₹399 / 60 நாட்கள்</option>
+        </select>
+        <button type="submit" class="btn">📩 Order Whatsapp</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+     உங்களுக்கு விளம்பரம் செய்ய
+  </footer>
+
+  <script>
+    document.getElementById("adForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let name = document.getElementById("name").value.trim();
+      let business = document.getElementById("business").value.trim() || "கொடுக்கப்படவில்லை";
+      let phone = document.getElementById("phone").value.trim();
+      let plan = document.getElementById("plan").value;
+
+      if(name === "" || phone === "" || plan === ""){
+        alert("தயவுசெய்து அனைத்து தேவையான புலங்களை நிரப்பவும்.");
+        return;
+      }
+
+      // message
+      let message = `📝 புதிய Order:\n\n👤 பெயர்: ${name}\n🏢 வியாபாரம்: ${business}\n📞 Phone: ${phone}\n📦 Plan: ${plan}`;
+
+      // encode செய்த பின் WhatsApp திற
+      let encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/919344165879?text=${encodedMessage}`, "_blank");
+    });
+  </script>
+</body>
+</html>

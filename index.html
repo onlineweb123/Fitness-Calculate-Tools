@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="ta">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fitness Calculate Tools</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
-  <style>
+    <meta charset="UTF-8">
+    <title>Fitness Calculate Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="./manifest.json">
+    <link rel='stylesheet' href='./style.css'>
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js');
+        };
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PWA Example">
+    <link rel="apple-touch-icon" href="icon-152x152.png">
+    <meta name="msapplication-TileImage" content="icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    
+    <style>
     body {
       margin: 0;
       padding: 0;
@@ -99,10 +115,11 @@
       font-size: 0.9rem;
     }
   </style>
+    
 </head>
 <body>
-
-  <header>
+    
+     <header>
     <h1> Fitness Calculate Tools </h1>
     <p>20+ Health & Fitness Calculators in Tamil</p>
   </header>
@@ -287,5 +304,7 @@
     © 2025 Copy Righted | Mathavan
   </footer>
 
+    
+    
 </body>
 </html>
